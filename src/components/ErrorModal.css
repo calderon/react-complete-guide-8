@@ -1,0 +1,49 @@
+.errorModal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.errorModal__modal {
+  background-color: #fff;
+  width: 500px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.errorModal__title {
+  background-color: #ff69b4;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+}
+
+.errorModal__content {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.errorModal__footer {
+  text-align: right;
+  padding: 10px;
+}
+
+.errorModal__button {
+  color: #fff;
+  background-color: #ff69b4;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px 20px;
+}
+
+.errorModal__button:hover{
+  cursor: pointer;
+}

@@ -35,15 +35,3 @@
   text-align: right;
   padding: 10px;
 }
-
-.errorModal__button {
-  color: #fff;
-  background-color: #ff69b4;
-  border-radius: 5px;
-  border: 0;
-  padding: 10px 20px;
-}
-
-.errorModal__button:hover{
-  cursor: pointer;
-}

@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import Box from "./Box";
 
 import "./UserForm.css";
+import Button from "./Button";
 
 const UserForm = (props) => {
   const [username, setUsername] = useState("");
@@ -67,9 +68,9 @@ const UserForm = (props) => {
             onChange={ageChangeHandler}
           />
         </div>
-        <button className="userForm__button" type="submit">
+        <Button type="submit">
           Add User
-        </button>
+        </Button>
       </form>
     </Box>
   );

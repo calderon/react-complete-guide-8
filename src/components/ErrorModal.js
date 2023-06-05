@@ -1,3 +1,4 @@
+import Button from "./Button.js";
 import "./ErrorModal.css";
 
 const ErrorModal = (props) => {
@@ -11,9 +12,9 @@ const ErrorModal = (props) => {
         <h2 className="errorModal__title">Invalid input</h2>
         <div className="errorModal__content">{props.errorMessage}</div>
         <div className="errorModal__footer">
-          <button className="errorModal__button" onClick={buttonClickHandler}>
+          <Button onClick={buttonClickHandler}>
             Close
-          </button>
+          </Button>
         </div>
       </div>
     </div>

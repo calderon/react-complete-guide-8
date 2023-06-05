@@ -1,4 +1,4 @@
-.errorModal {
+.modal-overlay {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
@@ -7,11 +7,11 @@
   left: 0;
 }
 
-.errorModal__modal {
+.modal {
   background-color: #fff;
   width: 500px;
   margin: 0 auto;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -19,19 +19,22 @@
   overflow: hidden;
 }
 
-.errorModal__title {
-  background-color: #ff69b4;
-  color: #fff;
+.modal__title {
   padding: 10px;
   margin: 0;
 }
 
-.errorModal__content {
+.modal--error .modal__title {
+  background-color: #ff69b4;
+  color: #fff;
+}
+
+.modal__content {
   font-size: 18px;
   padding: 10px;
 }
 
-.errorModal__footer {
+.modal__footer {
   text-align: right;
   padding: 10px;
 }

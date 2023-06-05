@@ -19,13 +19,13 @@ const App = () => {
   };
 
   return (
-    <div>
+    <>
       <UserForm onShowError={setErrorMessage} onAddUser={addUserHandler} />
       {errorMessage !== "" && (
         <ErrorModal errorMessage={errorMessage} onHide={hideModalHandler} />
       )}
       <UserList users={users} />
-    </div>
+    </>
   );
 };
 

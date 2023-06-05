@@ -1,0 +1,18 @@
+.users {
+  margin-top: 30px;
+}
+
+.users__list {
+  list-style: none;
+  padding: 0;
+}
+
+.users__item {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.users__item:last-child {
+  margin-bottom: 0; 
+}

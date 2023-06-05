@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 import Box from "./Box";
 
@@ -28,6 +29,15 @@ const UserForm = (props) => {
       props.onShowError("Please enter a valid age (> 0)");
       return;
     }
+
+    props.onAddUser({
+      id: uuidv4(),
+      username,
+      age
+    });
+
+    setUsername("");
+    setAge("");
   };
 
   return (

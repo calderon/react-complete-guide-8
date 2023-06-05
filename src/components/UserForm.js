@@ -4,7 +4,7 @@ import Box from "./Box";
 
 import "./UserForm.css";
 
-const UserForm = () => {
+const UserForm = (props) => {
   const [username, setUsername] = useState("");
   const [age, setAge] = useState("");
 
@@ -18,6 +18,16 @@ const UserForm = () => {
 
   const userFormSubmitHandler = (evt) => {
     evt.preventDefault();
+
+    if (username === "" || age === "") {
+      props.onShowError("Please enter a valid name and age (non-empty values)");
+      return;
+    }
+
+    if (parseInt(age) < 0) {
+      props.onShowError("Please enter a valid age (> 0)");
+      return;
+    }
   };
 
   return (

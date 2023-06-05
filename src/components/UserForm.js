@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 import Box from "./Box";
 
@@ -33,7 +33,7 @@ const UserForm = (props) => {
     props.onAddUser({
       id: uuidv4(),
       username,
-      age
+      age,
     });
 
     setUsername("");
@@ -44,8 +44,11 @@ const UserForm = (props) => {
     <Box>
       <form onSubmit={userFormSubmitHandler}>
         <div className="userForm__field">
-          <label className="userForm__label">Username</label>
+          <label htmlFor="username" className="userForm__label">
+            Username
+          </label>
           <input
+            id="username"
             className="userForm__input"
             type="text"
             value={username}
@@ -53,15 +56,20 @@ const UserForm = (props) => {
           />
         </div>
         <div className="userForm__field">
-          <label className="userForm__label">Age (years)</label>
+          <label htmlFor="age" className="userForm__label">
+            Age (years)
+          </label>
           <input
+            id="age"
             className="userForm__input"
             type="number"
             value={age}
             onChange={ageChangeHandler}
           />
         </div>
-        <button className="userForm__button" type="submit">Add User</button>
+        <button className="userForm__button" type="submit">
+          Add User
+        </button>
       </form>
     </Box>
   );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import Box from "./Box";
@@ -7,19 +7,14 @@ import "./UserForm.css";
 import Button from "./Button";
 
 const UserForm = (props) => {
-  const [username, setUsername] = useState("");
-  const [age, setAge] = useState("");
-
-  const usernameChangeHandler = (evt) => {
-    setUsername(evt.target.value);
-  };
-
-  const ageChangeHandler = (evt) => {
-    setAge(evt.target.value);
-  };
+  const usernameRef = useRef();
+  const ageRef = useRef();
 
   const userFormSubmitHandler = (evt) => {
     evt.preventDefault();
+
+    const username = usernameRef.current.value;
+    const age = ageRef.current.value;
 
     if (username === "" || age === "") {
       props.onShowError("Please enter a valid name and age (non-empty values)");
@@ -37,8 +32,8 @@ const UserForm = (props) => {
       age,
     });
 
-    setUsername("");
-    setAge("");
+    usernameRef.current.value = '';
+    ageRef.current.value = '';
   };
 
   return (
@@ -52,8 +47,7 @@ const UserForm = (props) => {
             id="username"
             className="userForm__input"
             type="text"
-            value={username}
-            onChange={usernameChangeHandler}
+            ref={usernameRef}
           />
         </div>
         <div className="userForm__field">
@@ -64,8 +58,7 @@ const UserForm = (props) => {
             id="age"
             className="userForm__input"
             type="number"
-            value={age}
-            onChange={ageChangeHandler}
+            ref={ageRef}
           />
         </div>
         <Button type="submit">
